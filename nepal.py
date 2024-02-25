@@ -1,5 +1,6 @@
 #Inheritance in python
 # It is a simple concept of how places are inside places
+
 class Country:
     country = input("Kun desh ko hau timi? ")
     def __init__(self,con,pop):
@@ -89,6 +90,7 @@ class Son(Father):
 
 final = Town(continent,population,state,city,town,ward)
 extreme = Son("Tek Bahadur","GrandFather","Lal Kumar","Father","Aman","Son")
+#2 hours of code
 
 
     
