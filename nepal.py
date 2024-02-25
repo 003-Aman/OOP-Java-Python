@@ -1,4 +1,5 @@
 #Inheritance in python
+# It is a simple concept of how places are inside places
 class Country:
     country = input("Kun desh ko hau timi? ")
     def __init__(self,con,pop):
@@ -10,8 +11,10 @@ class Country:
         print(self.country+" has a population of : "+ self.Population)
 
 class State(Country):
-    def __init__(self, con, pop,state,city):
-        super().__init__(con, pop)  
+    
+    def __init__(self,con, pop, state,city):
+        super().__init__(con, pop)
+          
         self.State = state
         self.City = city
 
@@ -42,5 +45,50 @@ ward = input("kun oda bhitra parthyo lekh nepal ko bhane natra street no. : ")
 print("------------------------------------------------------")
 print("------------------------------------------------------")
 
+
+
+
+
+
+#Lets do one more which is the practical inheritance that we see of Grandfather, Father and son
+
+class GrandFather:
+    Surname = "Shrestha"
+    def __init__(self,name, position):
+        self.GrandName = name 
+        self.GPosition = position
+
+    def display_relation(self):
+        print(self.Surname+ " is the surname of my family.")
+        print(self.GrandName+" is my "+self.GPosition)
+
+class Father(GrandFather):
+    def __init__(self, name, position,name1,position1):
+        super().__init__(name, position)  
+        self.FatherName = name1
+        self.Fposition = position1
+
+    def display_relation(self):
+        super().display_relation()
+        print(self.FatherName+" is my "+self.Fposition)
+        print(self.FatherName+"is the son of "+self.GrandName)
+
+class Son(Father):
+    def __init__(self, name, position, name1, position1,name2,position2):
+        super().__init__(name, position, name1, position1)  
+        self.MyName = name2
+        self.MyPosition = position2  
+
+    def display_relation(self):
+        super().display_relation()
+        print("My name is "+self.MyName)
+        print("I am the "+self.MyPosition+ " of"+self.FatherName )  
+
+
+   
+
 final = Town(continent,population,state,city,town,ward)
-final.display_info()
+extreme = Son("Tek Bahadur","GrandFather","Lal Kumar","Father","Aman","Son")
+
+
+    
