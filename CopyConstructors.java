@@ -1,3 +1,4 @@
+// destructors are already present in java aka garbage collectors 
 class Student{
     String name;
     int age;
